@@ -1,0 +1,15 @@
+It is an application development framework for enterprise Java(J2EE).
+There is an extension for building web applications on top of the Java EE platform.
+Spring is a framework for dependency injection which is the pattern that allowed to build a very decoupled system.
+The goal of spring is to make J2EE development easier to use and promote good programming practice.
+------------------------------------------------------------------------------------------------------------------------------
+Let’s look at some advantages of Spring Framework:
+-----------------------------------------------------------------------------------------------
+Spring Framework can be employed on all architectural layers used in the development of web applications;
+Uses the very lightweight POJO model when writing classes;
+Allows you to freely link modules and easily test them;
+Supports declarative programming;
+Eliminates the need to independently create factory and singleton classes;
+Supports various configuration methods;
+Provides middleware-level service.
+Despite the many advantages of Spring Framework, the lengthy preparation process involved in configuring it has contributed to the creation of Spring Boot.

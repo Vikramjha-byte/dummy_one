@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.beans.Customer" id="cust" scope="prototype">
+		<constructor-arg name="id" value="100"></constructor-arg>
+		<constructor-arg name="name" value="Chatrapathi"></constructor-arg>
+		<constructor-arg name="custOrder">
+			<list>
+				<ref bean="biryani"/>
+				<ref bean="curd"/>
+				<ref bean="rajma"/>
+				<ref bean="rice"/>
+				<ref bean="veg"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="placesVisit">
+			<list>
+				<value>Agra</value>
+				<value>LalBagh</value>
+				<value>Golkonda Fort</value>
+				<value>Charminar</value>
+				<value>Cubbon Park</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="com.beans.CustomerOrder" id="biryani"
+		scope="singleton">
+		<constructor-arg name="orderId" value="2006"></constructor-arg>
+		<constructor-arg name="orderName" value="ChickenBiryani"></constructor-arg>
+	</bean>
+	<bean class="com.beans.CustomerOrder" id="curd"
+		scope="singleton">
+		<constructor-arg name="orderId" value="2007"></constructor-arg>
+		<constructor-arg name="orderName" value="CurdRice"></constructor-arg>
+	</bean>
+	<bean class="com.beans.CustomerOrder" id="rajma"
+		scope="singleton">
+		<constructor-arg name="orderId" value="2008"></constructor-arg>
+		<constructor-arg name="orderName" value="Rajma Chaval"></constructor-arg>
+	</bean>
+	<bean class="com.beans.CustomerOrder" id="veg"
+		scope="singleton">
+		<constructor-arg name="orderId" value="2009"></constructor-arg>
+		<constructor-arg name="orderName" value="Veg Biryani"></constructor-arg>
+	</bean>
+	<bean class="com.beans.CustomerOrder" id="rice"
+		scope="singleton">
+		<constructor-arg name="orderId" value="2010"></constructor-arg>
+		<constructor-arg name="orderName" value="Plain Rice"></constructor-arg>
+	</bean>
+</beans>

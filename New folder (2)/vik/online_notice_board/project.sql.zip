@@ -1,0 +1,262 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 20, 2018 at 02:15 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `project`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `a_id` int(11) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `middlename` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `fathername` varchar(30) NOT NULL,
+  `mothername` varchar(30) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `branch` varchar(30) NOT NULL,
+  `dob` date NOT NULL,
+  `amobileno` varchar(10) NOT NULL,
+  `designation` varchar(30) NOT NULL,
+  `emailid` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `regno` varchar(30) NOT NULL,
+  `almuni` varchar(30) NOT NULL,
+  `foccupation` varchar(30) NOT NULL,
+  `fmbno` varchar(30) NOT NULL,
+  `faddress` varchar(150) NOT NULL,
+  `moccupation` varchar(30) NOT NULL,
+  `mmbno` varchar(10) NOT NULL,
+  `maddress` varchar(150) NOT NULL,
+  `area` varchar(30) NOT NULL,
+  `nationality` varchar(30) NOT NULL,
+  `state` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`a_id`, `firstname`, `middlename`, `lastname`, `fathername`, `mothername`, `gender`, `branch`, `dob`, `amobileno`, `designation`, `emailid`, `username`, `password`, `regno`, `almuni`, `foccupation`, `fmbno`, `faddress`, `moccupation`, `mmbno`, `maddress`, `area`, `nationality`, `state`) VALUES
+(1, 'VIKRAM', 'KUMAR', 'JHA', 'VINOD KUMAR JHA', 'RANJANA JHA', 'MALE', 'CSE', '1998-11-12', '9001439965', 'HOD', 'vikramadved16@gmail.com', 'Adminvik', 'Admin@1234', 'ADVIP223962018', 'admin', 'CRPF', '8521922046', 'DARBHANGA', 'HOME MAKER', '9525112309', 'DARBHANGA', 'PRATAPNAGAR', 'INDIAN', 'Rajasthan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loginmember`
+--
+
+CREATE TABLE `loginmember` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(40) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `mobile` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `address` varchar(150) NOT NULL,
+  `almuni` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `loginmember`
+--
+
+INSERT INTO `loginmember` (`id`, `firstname`, `lastname`, `username`, `password`, `mobile`, `email`, `gender`, `address`, `almuni`) VALUES
+(1, 'vikram', 'kumar', 'MARKIV', 'Exact@167', '9001439965', 'vikramadved16@gmail.com', 'male', 'gangasagar', 'student'),
+(2, 'rajesh', 'kumar', 'raj', '12345', '7979893048', 'vikramadved@gmail.com', 'male', 'madarpur', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member`
+--
+
+CREATE TABLE `member` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `middlename` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `fathername` varchar(30) NOT NULL,
+  `mothername` varchar(30) NOT NULL,
+  `gender` varchar(30) NOT NULL,
+  `branch` varchar(10) NOT NULL,
+  `dob` date NOT NULL,
+  `mobileno` varchar(10) NOT NULL,
+  `year` varchar(30) NOT NULL DEFAULT 'ADMIN',
+  `emailid` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `regno` varchar(30) NOT NULL,
+  `almuni` varchar(25) NOT NULL DEFAULT 'student',
+  `foccupation` varchar(30) NOT NULL,
+  `fmbno` varchar(10) NOT NULL,
+  `faddress` varchar(150) NOT NULL,
+  `moccupation` varchar(30) NOT NULL,
+  `mmbno` varchar(10) NOT NULL,
+  `maddress` varchar(150) NOT NULL,
+  `area` varchar(30) NOT NULL,
+  `nationality` varchar(20) NOT NULL,
+  `state` varchar(40) NOT NULL,
+  `designation` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`id`, `firstname`, `middlename`, `lastname`, `fathername`, `mothername`, `gender`, `branch`, `dob`, `mobileno`, `year`, `emailid`, `username`, `password`, `regno`, `almuni`, `foccupation`, `fmbno`, `faddress`, `moccupation`, `mmbno`, `maddress`, `area`, `nationality`, `state`, `designation`) VALUES
+(1, 'VIKRAM', 'KUMAR', 'JHA', 'VINOD KUMAR JHA', 'RANJANA JHA', 'MALE', 'CSE', '1998-11-12', '7979893048', 'FINAL', 'vikramadved16@gmail.com', 'MARKIV', 'Exact@16', 'STREG66752018', 'student', 'CRPF', '8521922046', 'GANGASAGAR,MADARPUR,DARBHANGA', 'HOUSE WIFE', '9525112309', 'GANGASAGAR,MADARPUR,DARBHANGA', 'PRATAP NAGAR', 'INDIA', 'Rajasthan', ''),
+(2, 'VIKRAM', 'KUMAR', 'JHA', 'VINOD KUMAR JHA', 'RANJANA JHA', 'MALE', 'CSE', '1998-11-12', '7979893048', 'ADMIN', 'vikramadved16@gmail.com', 'HELLOADMIN', 'Admin@1234', 'ADVIP879322018', 'admin', 'CRPF', '8521922046', 'GANGASAGAR', 'HOME MAKER', '9525112309', 'GANGASAGAR', 'PRATAP NAGAR', 'INDIAN', 'Rajasthan', 'HOD'),
+(9, 'SOURABH', '', 'KUMAR', 'jai prakash sah', 'kumari rekha', 'MALE', 'CSE', '1995-09-04', '7903288279', 'ADMIN', 'sourabh9006@gmail.com', 'IMSOURABH', '7903288279', 'ADVIP940262018', 'admin', 'govt.teacher', '0123456789', 'bhagalpur,bihar', 'house wife', '9876543210', 'bhagalpur,bihar', 'PRATAP NAGAR', 'INDIAN', 'Bihar', 'HOD');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notice`
+--
+
+CREATE TABLE `notice` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `description` varchar(1000) NOT NULL,
+  `branch` varchar(50) NOT NULL,
+  `year` varchar(20) NOT NULL,
+  `almuni` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  `type` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`id`, `title`, `description`, `branch`, `year`, `almuni`, `date`, `type`) VALUES
+(2, 'CULTURAL EVENT', 'ALL THE FACULTY AND STUDENTS ARE INFORMED ABOUT CULTURAL EVENT THAT WILL BE GOING TO ORGANISE IN YOUR COLLEGE CAMPUS.\r\nTHE HEAD BOYS AND HEAD GIRLS ARE INFORMED TO MEET PRINCIPAL SIR AT PRINCIPAL DESK.\r\nTHOSE WHO ARE INTERESTED IN PARTICIPATING CULTURAL EVENT ARE INFORMED TO GIVE THEIR NAME TO RESPECTED HEAD BOY/HEAD GIRL.\r\nENTRY FEE= 50/- RS', 'COLLEGE CAMPUS', 'COLLEGE CAMPUS', 'DR.NITESH MEENA', '2018-07-16', 'PRINCIPAL'),
+(3, 'EXAMINATION ', 'all the student are notified that the examination date are from 26', 'all', 'final', 'vikram kiumar', '2018-07-20', 'cse');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `result`
+--
+
+CREATE TABLE `result` (
+  `id` int(11) NOT NULL,
+  `rollno` varchar(30) NOT NULL,
+  `examyear` varchar(30) NOT NULL,
+  `nameofexam` varchar(50) NOT NULL,
+  `sub1` int(11) NOT NULL,
+  `sub2` int(11) NOT NULL,
+  `sub3` int(11) NOT NULL,
+  `sub4` int(11) NOT NULL,
+  `sub5` int(11) NOT NULL,
+  `sub6` int(11) NOT NULL,
+  `percentage` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `result`
+--
+
+INSERT INTO `result` (`id`, `rollno`, `examyear`, `nameofexam`, `sub1`, `sub2`, `sub3`, `sub4`, `sub5`, `sub6`, `percentage`) VALUES
+(1, 'STREG66752018', '2016', 'FIRST YEAR EXAM RESULT', 65, 46, 46, 48, 56, 45, 65.8),
+(2, 'STREG66752018', '2017', 'SECOND YEAR EXAM RESULT', 45, 45, 48, 54, 56, 45, 67),
+(3, 'STREG66752018', '2018', 'THIRD YEAR EXAM RESULT', 78, 87, 78, 88, 78, 78, 87);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`a_id`);
+
+--
+-- Indexes for table `loginmember`
+--
+ALTER TABLE `loginmember`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notice`
+--
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `result`
+--
+ALTER TABLE `result`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `a_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `loginmember`
+--
+ALTER TABLE `loginmember`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `notice`
+--
+ALTER TABLE `notice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `result`
+--
+ALTER TABLE `result`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

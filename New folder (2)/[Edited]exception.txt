@@ -1,0 +1,82 @@
+class Customer{
+	int id;
+	String name;
+	Double WalletBalance;
+	String Address;
+	public Customer(int id, String name, Double walletBalance, String address) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.WalletBalance = walletBalance;
+		this.Address = address;
+	}
+	
+	
+}
+
+class Item{
+	int Itemid;
+	String ItemName;
+	String companyname;
+	Double price;
+	Boolean isInStock;
+	public Item(int itemid, String itemName, String companyname, Double price, Boolean isInStock) {
+		super();
+		this.Itemid = itemid;
+		this.ItemName = itemName;
+		this.companyname = companyname;
+		this.price =price ;
+		this.isInStock=isInStock;
+	}
+	
+}
+class shoppingwebsite{
+	
+ public  String PurchaseItem(Item i,Customer c) throws InsufficientBalanceException,ItemOutOfStockException {
+String msg="";//Adding new string here
+	 try {
+	 if(i.isInStock==false) {
+		 throw new ItemOutOfStockException("out of stock");
+	 }
+	 else if(c.WalletBalance<i.price) {
+		 throw new InsufficientBalanceException("insufficient balance");
+	 }
+	 else {
+		 msg+="Order Placed";// added the message order placed
+	 }
+   }
+   catch(InsufficientBalanceException e) {
+	   msg+="Insufficient balance";// Added the message if insufficient balance
+   }
+	catch(ItemOutOfStockException e) {
+	 msg+="out of stock";// Added the message out of stock
+ }
+return msg;// return the message
+	
+}
+}
+class InsufficientBalanceException extends Exception{
+	public InsufficientBalanceException (String message) {
+		super(message);
+	}
+}
+class ItemOutOfStockException extends Exception{
+	public ItemOutOfStockException(String message) {
+		super(message);
+	}
+	
+}
+
+public class Source {
+
+	public static void main(String[] args) throws InsufficientBalanceException, ItemOutOfStockException {
+		// TODO Auto-generated method stub
+		Item i=new Item(4, "bag", "hh", 899.9, true);
+		Customer c=new Customer(8, "abhi", 900.9, "gffdrfses");
+		shoppingwebsite sh=new shoppingwebsite();
+		String message= sh.PurchaseItem(i, c);// storing the returned value in message string
+	   System.out.println(message);// printing the message
+
+	}
+
+}

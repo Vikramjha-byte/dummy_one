@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean class="com.gaur.Foodies_Rest.Foodies" id="f" scope="prototype">
+		<constructor-arg name="id" value="10"></constructor-arg>
+		<constructor-arg name="name" value="Ramu"></constructor-arg>
+		<constructor-arg name="res">
+			<list>
+				<ref bean="Royal Cafe"/>
+				<ref bean="Step in"/>
+				<ref bean="Cappacino"/>
+				<ref bean="MCD"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="branches">
+			<list>
+				<value>Agra</value>
+				<value>LalBagh</value>
+				<value>Golkonda Fort</value>
+				<value>Charminar</value>
+				<value>Cubbon Park</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean class="com.gaur.Foodies_Rest.Restaurant" id="Royal Cafe"
+		scope="singleton">
+		<constructor-arg name="orderid" value="2006"></constructor-arg>
+		<constructor-arg name="ordername" value="ChickenBiryani"></constructor-arg>
+	</bean>
+	<bean class="com.gaur.Foodies_Rest.Restaurant" id="Step in"
+		scope="singleton">
+		<constructor-arg name="orderid" value="2007"></constructor-arg>
+		<constructor-arg name="ordername" value="CurdRice"></constructor-arg>
+	</bean>
+	<bean class="com.gaur.Foodies_Rest.Restaurant" id="Cappacino"
+		scope="singleton">
+		<constructor-arg name="orderid" value="2008"></constructor-arg>
+		<constructor-arg name="ordername" value="Rajma Chaval"></constructor-arg>
+	</bean>
+	<bean class="com.gaur.Foodies_Rest.Restaurant" id="MCD"
+		scope="singleton">
+		<constructor-arg name="orderid" value="2009"></constructor-arg>
+		<constructor-arg name="ordername" value="Veg Biryani"></constructor-arg>
+	</bean>
+	
+</beans>

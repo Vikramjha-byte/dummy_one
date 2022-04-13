@@ -1,0 +1,9 @@
+source code
+requirements
+presentation
+Communication
+coding Standards
+unit-testing
+use-case
+proper commenting
+module flow
